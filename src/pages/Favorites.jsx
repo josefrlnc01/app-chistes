@@ -5,10 +5,10 @@ export default function Favorites(){
     const { jokes, removeJoke} = useFavoritesStore()
     
   return (
-    <div className="max-w-xl mx-auto min-h-screen">
-      <h2 className="text-2xl font-bold mb-4 text-center">Mis Chistes Guardados</h2>
+    <div className="max-w-xl mx-auto mt-10 py-8 min-h-screen ">
+      <h2 className="text-2xl font-bold mb-4 text-center text-yellow-50">Mis Chistes Guardados</h2>
       {jokes.length === 0 ? (
-        <p>No tienes chistes favoritos.</p>
+        <p className="text-yellow-50">No tienes chistes favoritos.</p>
       ) : (
         jokes.map((joke) => (
           <div key={joke.id} className="bg-gray-100 p-4 mb-3 rounded-md shadow w-5/6 mx-auto">

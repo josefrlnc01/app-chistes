@@ -13,8 +13,9 @@ export default function Header({menuToggle, setMenuToggle}){
     return(
         <>
         <header className="flex flex-row items-center pt-4 min-w-max min-h-4 ">
-            <button type='button' className="px-2 py-2 bg-transparent ml-4 rounded-md z-10"><img alt='logo de menu' className='w-9' src={menuIcon} onClick={mostrarMenu} />​</button>
+            <button type='button' className="px-2 py-2 bg-transparent ml-4 rounded-md z-20"><img alt='logo de menu' className='w-9' src={menuIcon} onClick={mostrarMenu} />​</button>
         {menuToggle ? <PanelSaveds
+       
         /> : ''}
         </header>
         </>

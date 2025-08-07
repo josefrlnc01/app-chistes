@@ -12,7 +12,7 @@ import Resolveds from './components/jokes';
 
 
 export default function App() {
-    const [menuToggle, setMenuToggle] = useState(false)
+    const [menuToggle, setMenuToggle] = useState(true)
     const [saved, setSaved] = useState('')
  return (
   <>
