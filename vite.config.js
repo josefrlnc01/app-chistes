@@ -7,11 +7,19 @@ export default ({ mode }) => {
   // Load environment variables based on the current mode
   const env = loadEnv(mode, process.cwd(), '')
   
-  // For Android builds, always use relative paths
-  const isAndroid = mode === 'android' || process.env.CAPACITOR === 'true'
-  const base = isAndroid ? '' : '/app-chistes/'
+  // Configuración de rutas base según el entorno
+  let base = '/app-chistes/'
   
-  console.log(`Building with base: ${base || '(empty)'}, mode: ${mode}, isAndroid: ${isAndroid}`)
+  // Para desarrollo local
+  if (mode === 'development') {
+    base = '/'
+  }
+  // Para builds de Android
+  else if (mode === 'android' || process.env.CAPACITOR === 'true') {
+    base = './'
+  }
+  
+  console.log(`Building with base: ${base || '(empty)'}, mode: ${mode}`)
 
   return defineConfig({
     base: base,

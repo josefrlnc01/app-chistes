@@ -6,7 +6,7 @@
   "homepage": "https://josefrlnc01.github.io/app-chistes",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "build:android": "set CAPACITOR=true && vite build --mode android && set CAPACITOR=",
     "lint": "eslint .",
     "preview": "vite preview",
