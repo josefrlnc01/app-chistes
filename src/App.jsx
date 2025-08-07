@@ -4,6 +4,7 @@ import Header from './components/header';
 import PanelSaveds from './components/saveds';
 import { useState } from 'react';
 import Resolveds from './components/jokes';
+import Flyer from './components/flyer';
 // Backup jokes in case the model fails
 
 
@@ -13,7 +14,12 @@ import Resolveds from './components/jokes';
 
 export default function App() {
     const [menuToggle, setMenuToggle] = useState(false)
+    const [readyForCanvas, setReadyForCanvas] = useState(null);
     const [saved, setSaved] = useState('')
+    
+
+
+
  return (
   <>
   <Header
@@ -21,11 +27,11 @@ export default function App() {
   setMenuToggle={setMenuToggle}
   
   />
-  
-  
+  {readyForCanvas ? <Flyer joke={saved} readyForCanvass={readyForCanvas} setReadyForCanvas={setReadyForCanvas} /> : null}
+
   <Jokes
-  saved={saved}
-  setSaved={setSaved}/>
+  setReadyForCanvas={setReadyForCanvas}
+  />
   </>
  )
 }
