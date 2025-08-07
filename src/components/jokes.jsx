@@ -63,7 +63,7 @@ export  default  function Jokes({saved,setSaved}){
         
         <button onClick={mostrarChisteAleatorio} className='bg-green-300 px-12 py-8 rounded-xl text-white'  >CONTAR CHISTE</button>
         <div className=' card min-w-60 max-w-60 min-h-72 mx-auto mt-16 border-x-slate-950 flex flex-col justify-between bg-slate-300 text-white px-8 py-12 rounded-md shadow-xl'>
-        <p className='text-lg'>{chisteActual}</p>
+        <p className='text-lg'>{chisteActual.toUpperCase()}</p>
         <div className=' min-w-full min-h-full px-2 py-4  text-white flex flex-row justify-center gap-2  rounded-lg' >
         <button className='bg-white  px-6 py-6  rounded-md' onClick={() => speak(chisteActual)}>🔊​</button>
         <button className='bg-white  px-6 py-6  rounded-md' onClick={() => addJoke(chisteActual)}>⭐​​</button>
