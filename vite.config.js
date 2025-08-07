@@ -2,11 +2,15 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
-// Usa la variable de entorno VITE_BASE para definir el base, por defecto '/'
+// Configuración para GitHub Pages
 export default defineConfig({
-  base: process.env.VITE_BASE || '/',
+  base: '/app-chistes/', // Asegúrate de que esto coincida con el nombre de tu repositorio
   plugins: [react()],
   server: {
     historyApiFallback: true,
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
 })
