@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+  <script>
+    // Obtener la ruta actual
+    const path = window.location.pathname;
+    // Redirigir a index.html con la ruta como parámetro de búsqueda
+    window.location.href = '/app-chistes/index.html' + window.location.search + (window.location.search ? '&' : '?') + 'redirect=' + encodeURIComponent(path);
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/app-chistes/" />
+  </noscript>
+</head>
+<body>
+  <p>Redirigiendo a la página principal... <a href="/app-chistes/">Haz clic aquí si no eres redirigido automáticamente</a>.</p>
+</body>
+</html>
