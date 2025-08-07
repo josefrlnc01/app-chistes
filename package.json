@@ -7,12 +7,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:android": "set CAPACITOR=true && vite build --mode android && set CAPACITOR=",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "android:sync": "npm run build:android && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:run": "npm run build:android && npx cap sync android && npx cap run android"
   },
   "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
     "@mlc-ai/web-llm": "^0.2.79",
     "@tailwindcss/vite": "^4.1.11",
     "@xenova/transformers": "^2.17.2",
